@@ -6,7 +6,7 @@
 
 ### Предварительные требования
 
-1. Убедитесь, что у вас установлена CUDA. [Гайд по установке]([https://developer.nvidia.com/cuda-downloads](https://developer.nvidia.com/cuda-11-8-0-download-archive)).
+1. Убедитесь, что у вас установлена CUDA. [Гайд по установке](https://developer.nvidia.com/cuda-11-8-0-download-archive).
 2. Установите PyTorch с поддержкой CUDA, следуя инструкциям на [официальном сайте PyTorch](https://pytorch.org/get-started/locally/):
 
 ```bash
