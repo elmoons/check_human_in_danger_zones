@@ -40,7 +40,7 @@ pip install -r requirements.txt
 pip install opencv-python
 ```
 
-6. Убедитесь, что у вас установлен Streamlit
+6. Убедитесь, что у вас установлен Streamlit:
 
 ```bash
 pip install streamlit
