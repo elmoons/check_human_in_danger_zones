@@ -1,0 +1,6 @@
+path: C:\Users\elmoo\PycharmProjects\danger_zone\data
+train: images\train
+val: val
+
+names:
+  0: human
