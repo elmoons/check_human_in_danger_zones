@@ -6,12 +6,7 @@
 
 ### Предварительные требования
 
-1. Убедитесь, что у вас установлена CUDA. [Гайд по установке](https://developer.nvidia.com/cuda-11-8-0-download-archive).
-2. Установите PyTorch с поддержкой CUDA, следуя инструкциям на [официальном сайте PyTorch](https://pytorch.org/get-started/locally/):
-
-```bash
-pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
-```
+Убедитесь, что у вас установлена CUDA. [Гайд по установке](https://developer.nvidia.com/cuda-11-8-0-download-archive).
 
 ### Установка проекта
 
@@ -49,6 +44,15 @@ pip install opencv-python
 
 ```bash
 pip install streamlit
+```
+2. Сначала удалите, а потом установите PyTorch с поддержкой CUDA, следуя инструкциям на [официальном сайте PyTorch](https://pytorch.org/get-started/locally/):
+
+```bash
+pip3 uninstall torch torchvision torchaudio 
+```
+
+ ```bash
+pip3 uninstall torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 ```
 
 
