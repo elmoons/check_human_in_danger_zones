@@ -48,7 +48,7 @@ pip install opencv-python
 6. Убедитесь, что у вас установлен Streamlit
 
 ```bash
-pip install opencv-python
+pip install streamlit
 ```
 
 
