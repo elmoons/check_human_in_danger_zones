@@ -84,7 +84,7 @@ def process_image(image_path, model, coordinates_from_input):
             is_in_danger = check_for_danger(obj_coords, danger_zone_coords, is_in_danger)
 
     frame_with_rectangles = save_image(frame, detected_objects, danger_zones, os.path.basename(image_path) + "_processed")
-    cv2.imwrite(os.path.join("../danger_zone/results", "processed_images", os.path.basename(image_path) + "_processed.jpg"), frame_with_rectangles)
+    cv2.imwrite(os.path.join("../check_human_in_danger_zones/results", "processed_images", os.path.basename(image_path) + "_processed.jpg"), frame_with_rectangles)
 
     return is_in_danger
 
@@ -95,7 +95,7 @@ def process_video(video_path, model, coordinates_from_input):
     frame_width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
     frame_height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
     fps = int(cap.get(cv2.CAP_PROP_FPS))
-    out = cv2.VideoWriter(os.path.join("../danger_zone/results", "processed_videos", os.path.basename(video_path) + "_processed.mp4"),
+    out = cv2.VideoWriter(os.path.join("../check_human_in_danger_zones/results", "processed_videos", os.path.basename(video_path) + "_processed.mp4"),
                           cv2.VideoWriter_fourcc(*'mp4v'), fps, (frame_width, frame_height))
 
     while cap.isOpened():
@@ -128,12 +128,12 @@ def main(name_file, user_input, media_type):
     file_path = f"save_media/{media_type}/{name_file}"
     coordinates_from_input = user_input
 
-    if not os.path.exists("../danger_zone/results"):
-        os.makedirs("../danger_zone/results")
-    if not os.path.exists(os.path.join("../danger_zone/results", "processed_images")):
-        os.makedirs(os.path.join("../danger_zone/results", "processed_images"))
-    if not os.path.exists(os.path.join("../danger_zone/results", "processed_videos")):
-        os.makedirs(os.path.join("../danger_zone/results", "processed_videos"))
+    if not os.path.exists("../check_human_in_danger_zones/results"):
+        os.makedirs("../check_human_in_danger_zones/results")
+    if not os.path.exists(os.path.join("../check_human_in_danger_zones/results", "processed_images")):
+        os.makedirs(os.path.join("../check_human_in_danger_zones/results", "processed_images"))
+    if not os.path.exists(os.path.join("../check_human_in_danger_zones/results", "processed_videos")):
+        os.makedirs(os.path.join("../check_human_in_danger_zones/results", "processed_videos"))
 
     if file_path.endswith(('.jpg', '.jpeg', '.png', '.bmp')):
         is_in_danger = process_image(file_path, model, coordinates_from_input)
@@ -146,7 +146,8 @@ def main(name_file, user_input, media_type):
 
 
 
-
+if __name__ == '__main__':
+    main("00b9ad22-ed0b-4fe8-ab91-4d8a181bc552.jpg", "(100, 100) (900, 200) (700, 800) (100, 700)", "image")
 
 # (0, 0) (640, 0) (640, 480) (0, 480)
 # (100, 100) (400, 200) (600, 500) (200, 400)
